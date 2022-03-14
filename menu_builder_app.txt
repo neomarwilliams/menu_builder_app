@@ -1,0 +1,24 @@
+This app is intended to simplify menu planning by streamlining online menu planning, creating reusable menus that can be integrated with google calendar, and creating a forum for people to share what works for them. 
+
+Backend Python/Django
+Frontend ReactJS
+
+stretch goals
+    --multiple many to many relationships
+    --Using ReactJS with Python/Django
+    --photo upload
+
+super stretch goals
+    --integrate google calendar API
+
+App functionalities
+    --user log/reg
+    --visitor can view (not use) site features without an account
+    --user can create highly customizable menu plans. 
+    --a menu object can:
+        --be updated/deleted/reused/viewed
+        --be private to user or shared publicly
+        --be used as a template 
+        --be added to a user's google calendar
+        --link directly to recipes
+        --have tags to make more searchable

@@ -34,4 +34,33 @@ class MenuView (APIView):
             serializer.save()
             return Response(serializer.data)
 
+class DayView (APIView):
+    serializer_class = DaySerializer
+
+    def get(self, request):
+        detail = [{'created_at':detail.created_at, 'updated_at':detail.updated_at}
+        for detail in Day.objects.all()]
+        return Response(detail)
+
+    def post(self, request):
+        serialzer = DaySerializer(data=request.data)
+        if serialzer.is_valid(raise_exception=True):
+            serialzer.save()
+            return Response(serializer.data)
+
+class TagView (APIView):
+    serializer_class = TagSerializer
+
+    def get(self, request):
+        detail = [{"tag_name":detail.tag_name}
+        for detail in Tag.objects.all()]
+        return Response(detail)
+
+    def post(self, request):
+        serializer = TagSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+
+
 # Create your views here.

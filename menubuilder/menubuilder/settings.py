@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main',
     'corsheaders',
     'log_and_reg',
+    'recipe',
 ]
 
 MIDDLEWARE = [

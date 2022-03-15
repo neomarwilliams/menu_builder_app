@@ -19,4 +19,19 @@ class ReactView (APIView):
             serializer.save()
             return Response(serializer.data)
 
+class MenuView (APIView):
+
+    serializer_class = MenuSerializer
+
+    def get(self, request):
+        detail = [ {"name": detail.name, "note": detail.note, "public": detail.public}
+        for detail in Menu.objects.all()]
+        return Response(detail)
+    
+    def post(self, request):
+        serializer = MenuSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+
 # Create your views here.

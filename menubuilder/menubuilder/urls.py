@@ -22,4 +22,5 @@ from log_and_reg.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('wel/', ReactView.as_view(), name="something"),
+    path('wel2/', MenuView.as_view(), name="what"),
 ]
